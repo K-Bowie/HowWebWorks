@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How the Web Works</title>
+</head>
+<body>
+    <h1>Part One: Solidify Terminology</h1>
+    <h2>What is HTTP?</h2>
+    <p>HTTP is Hypertext Transfer Protocol. This is how browsers and servers communicate.</p>
+    <h2>What is a URL?</h2>
+    <p>URL is Universal Resource Locators. This is a unique identifier that is used to locate a specific resource on the Internet.</p>
+    <h2>What is DNS?</h2>
+    <p>DNS is Domain Name Service. This translates the hostname/ domain name into an IP address.</p>
+    <h2>What is a query string?</h2>
+    <p>Query string is apart of the URL usually at the end that provides “extra information”. This is generated from form submission or by a user typing a query into the address bar of the browser. 
+        <br>
+        The query string starts at the question mark (?) and the key and values are separated by an ampersand (&) and within each key and value, they are connected by an equal sign (=).
+    </p>
+    <h2>What are two HTTP verbs and how are they different?</h2>
+    <p>The two HTTP verbs are GET and POST. For GET the requests are without side effects, so it requests data from the specified resource while, for POST, the requests are with side effects, so it sends data to a server to create/update a resource.</p>
+    <h2>What is an HTTP request?</h2>
+    <p>A HTTP request is a message sent from the client (browser) to a server requesting a resource which is formatted in the HTTP protocol. </p>
+    <h2>What is an HTTP response?</h2>
+    <p>An HTTP response is made by the server to the client. It is to provide the client with the resource it requested or inform the client that the action it requested was executed or to notify the client that an error occurred in processing the request.</p>
+    <h2>What is an HTTP header? Give a couple examples of request and response headers you have seen.</h2>
+    <p>An HTTP header allows the client and the server to pass additional information with a HTTP request and response.
+        <br><br>
+        Examples of Request headers are Cookie, Authorization, Referer, Accept, Host, User-Agent.
+        <br><br>
+        Examples of Response headers are Age, Content-Type, Cache-Control, Content-Length, Expires, Set-Cookie.
+    </p>
+    <h2>What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?</h2>
+    <ul>
+        <li>The first step is the DNS resolution. The browser would translate the human-readable domain name,"somesite.com" into an IP address that the server can understand.</li>
+        <li>Once the browser obtains the IP address of the server hosting "somesite.com", it then initiates a Transmission Control Protocol (TCP) connection to the server.(Uses the resolved IP address and port number 80 or 443 for HTTPS).</li>
+        <li>After the TCP connection has been established, the browser sends an HTTP request to the server for the resource "/some/page.html” on the "somesite.com" hostname/ domain name. This is where the request methods, headers comes in.</li>
+        <li>When the server receives the HTTP request from the browser and processes it accordingly, it then locates the requested resource "/some/page.html" within its file system or database and prepares to send it back to the browser in an HTTP response.</li>
+        <li>Once the server locates the requested resource, it builds an HTTP response (includes status codes, headers and cookies) which contains the HTML content of "page.html”.</li>
+        <li>Once the HTTP response from the server has been received, the browser renders the web page by interpreting and displaying the HTML contents along with CSS and JavaScript. The user can interact with and view the content of “http://somesite.com/some/page.html” in the browser. </li>
+    </ul>
+    <hr>
+    <h1>Part Two: Practice Tools</h1>
+    <h2>Using curl, make a GET request to the icanhazdadjoke.com API to find all jokes involving the word “pirate”.</h2>
+    <p>To get all the jokes from Pirate in icanhazdadjoke.com, see image below:</p>
+    <img src="CURL.png">
+    <h2>Use dig to find what the IP address is for icanhazdadjoke.com</h2>
+    <p>The IP address for icanhazdadjoke.com is 104.21.66.15</p>
+    <img src="DIG.png">
+    <h2>Make a simple web page and serve it using python3 -m http.server. Visit the page in a browser.</h2>
+    <img src="ServeWithPython.png">
+    <img src="LocalhostonBrowser.png">
+    <p>To stop the server, it is Ctrl + Z.</p>
+    <hr>
+    <h1>Part Three: Explore Dev Tools</h1>
+    <h2>Build a very simple HTML form that uses the GET method (it can use the same page URL for the action) when the form is submitted. 
+        <br><br>
+        Add a field or two to the form and, after submitting it, explore in Chrome Developer tools how you can view the request and response headers. 
+        <br><br>
+        Edit the page to change the form type to POST, refresh in the browser and re-submit. Do you still see the field in the query string?
+        <br> 
+        Explore in Chrome how you can view the request and response headers, as well as the form data.
+    </h2>
+    <p>GET</p>
+    <img src="ResponseHeaderforGet.png">
+    <img src="QueryStringforGet.png">
+    <p>POST</p>
+    <img src="ResponseHeaderforPost.png">
+    <img src="QueryStringforPost.png">
+
+</body>
+</html>
