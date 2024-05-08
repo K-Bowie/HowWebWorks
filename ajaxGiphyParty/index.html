@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Giphy Party!</title>
+  <style>
+    #searchForm{
+      display: flex;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    #remove{
+      background-color: orangered; 
+      color: white; 
+      padding: 15px 10px; 
+      border: none; 
+      border-radius: 5px; 
+      margin-left: 10px;
+    }
+
+    #submit{
+      background-color: gray; 
+      color: white; 
+      padding: 70px 20px; 
+      border: none; 
+      border-radius: 5px;
+    }
+
+    #search{
+      background-color: white; 
+      padding: 15px 10px; 
+      border: none; 
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    #theGiphyResult{
+      margin-top: 20px;
+      display: flex;
+      gap: 5px;
+    }
+  </style>
+ 
+</head>
+
+<body style="background-color: black;">
+  <h1 style="text-align: center; color: white; font-size: 40px;">GIPHY Party</h1>
+  <form id="searchForm">
+    <input type="text" id="search" placeholder="Enter a search term">
+    <input type="submit" value="Search GIPHY!">
+    <button id="remove">Remove Images</button>
+  </form>
+  <div id="theGiphyResult"></div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="app.js"></script>
+</body>
+
+</html>
